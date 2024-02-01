@@ -1,0 +1,39 @@
+.custom-banner .banner__box .banner__heading {
+        font-family: IBM Plex Sans;
+        font-size: 66px;
+        font-weight: 700;
+        line-height: 66px;
+        letter-spacing: 0px;
+        text-transform: uppercase;
+        margin-bottom: 28px;
+}
+.custom-banner .caption-with-letter-spacing p {
+        font-family: IBM Plex Sans Condensed;
+        font-size: 10px;
+        font-weight: 700;
+        line-height: 13px;
+        letter-spacing: 0.05em;
+        margin-bottom: 12px;
+}
+.custom-banner .banner__text.body {
+    max-width: 380px;
+    margin-bottom: 12px;
+}
+
+.custom-banner .banner__text.body p {
+        font-family: IBM Plex Sans;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 26px;
+        letter-spacing: 0px;
+        text-align: center;
+}
+.custom-banner .banner__buttons .button {
+        font-family: IBM Plex Sans Condensed;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 14px;
+        letter-spacing: 0.1em;
+        text-align: center;
+        text-transform: uppercase;
+}
