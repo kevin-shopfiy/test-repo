@@ -115,7 +115,7 @@
       }}
     </div>
   {%- endif -%}
-  <div class="custom-banner banner__content banner__content--{{ section.settings.desktop_content_position }} page-width{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+  <div class="banner__content banner__content--{{ section.settings.desktop_content_position }} page-width{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
     <div class="banner__box content-container content-container--full-width-mobile color-{{ section.settings.color_scheme }} gradient">
       {%- for block in section.blocks -%}
         {%- case block.type -%}
@@ -143,7 +143,6 @@
                     href="{{ block.settings.button_link_1 }}"
                   {% endif %}
                   class="button{% if block.settings.button_style_secondary_1 %} button--secondary{% else %} button--primary{% endif %}"
-                  style="color:{{ block.settings.btn_color }}"
                 >
                   {{- block.settings.button_label_1 | escape -}}
                 </a>
@@ -366,7 +365,7 @@
     {
       "type": "heading",
       "name": "t:sections.image-banner.blocks.heading.name",
-      "limit": 3,
+      "limit": 1,
       "settings": [
         {
           "type": "inline_richtext",
@@ -399,7 +398,7 @@
     {
       "type": "text",
       "name": "t:sections.image-banner.blocks.text.name",
-      "limit": 3,
+      "limit": 1,
       "settings": [
         {
           "type": "inline_richtext",
@@ -429,7 +428,6 @@
         }
       ]
     },
-
     {
       "type": "buttons",
       "name": "t:sections.image-banner.blocks.buttons.name",
@@ -441,12 +439,6 @@
           "default": "Button label",
           "label": "t:sections.image-banner.blocks.buttons.settings.button_label_1.label",
           "info": "t:sections.image-banner.blocks.buttons.settings.button_label_1.info"
-        },
-        {
-            "type": "color",
-            "id": "btn_color",
-            "label": "Button color",
-            "default": "#004289"
         },
         {
           "type": "url",
