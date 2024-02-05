@@ -1,0 +1,68 @@
+{% style %}
+    .newsletter-section {
+        background-image:url("{{ section.settings.bg_image | img_url: 'master' }}");
+        background-size: cover;
+    }
+        
+{% endstyle %}
+<div class="newsletter-section">
+    <div class="text-content">
+        {% if section.settings.title %}
+            <h1>{{ section.settings.title }}</h1>
+        {% endif %}
+        {% if section.settings.text %}
+            <p>{{ section.settings.text }}</p>
+        {% endif %}
+        <div class="input-wrapper">
+            <p>Email Address</p>
+            <div class="input-section">
+                <input type="email" class="input">
+                <div class="btn" style="background-color: {{ section.settings.bg_color }};">
+                    {%- if section.settings.btn_title -%}
+                        <a href="{{ section.settings.btn_title }}">{{ section.settings.btn_title }}</a>
+                    {%- endif -%}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% schema %}
+    {
+        "name": "news-letter",
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "bg_image",
+                "label": "Background Image"
+            },
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Title",
+                "default": "join our newsletter"
+            },
+            {
+                "type": "text",
+                "id": "text",
+                "label": "Text"
+            },
+            {
+                "type": "text",
+                "id": "btn_title",
+                "label": "Button title",
+                "default": "sign up"
+            },
+            {
+                "type": "color",
+                "id": "bg_color",
+                "label": "Button color",
+                "default": "#004289"
+            }
+        ], 
+        "presets": [
+            {
+                "name": "newsletter"
+            }
+        ]
+    }
+{% endschema %}

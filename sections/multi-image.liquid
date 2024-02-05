@@ -1,0 +1,118 @@
+<div class="custom-page-width multi-image">
+    <div class="left-bar">
+        {% for block in section.blocks %}
+            <div class="item">
+                <div class="image">
+                    <img src="{{ block.settings.image | img_url:  "1027x720" }}" alt="image">
+                </div>
+                <div class="text-wrapper" style="background-color: {{ block.settings.bg_color }}">
+                    <div class="text">
+                        {%- if block.settings.title -%}
+                            <h2>{{ block.settings.title }}</h2>
+                        {%- endif -%}
+                        {% if block.settings.subtitle %}
+                            <p>{{ block.settings.subtitle }}</p>
+                        {% endif %}
+                        {%- if block.settings.btn_title -%}
+                            <div class="btn">
+                                <a href="{{ block.settings.btn_link }}">{{ block.settings.btn_title }}</a>
+                            </div>
+                        {%- endif -%}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="right-bar">
+        <img src="{{ section.settings.bg_image | img_url: "1024x720"}}">
+        <div class="text">
+            {%- if section.settings.title -%}
+                <h1>{{ section.settings.title }}</h1>
+            {%- endif -%}
+            {% if section.settings.subtitle %}
+                <p>{{ section.settings.subtitle }}</p>
+            {% endif %}
+            {%- if section.settings.btn_title -%}
+                <div class="btn">
+                    <a href="{{ section.settings.btn_link }}">{{ section.settings.btn_title }}</a>
+                </div>
+            {%- endif -%}
+        </div>
+    </div>
+</div>
+{% schema %}
+    {
+        "name": "Multi Image",
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "bg_image",
+                "label": "Background Image"
+            },
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Title"
+            },
+            {
+                "type": "text",
+                "id": "subtitle",
+                "label": "Subtitle"
+            },
+            {
+                "type": "text",
+                "id": "btn_title",
+                "label": "Button title"
+            },
+            {
+                "type": "url",
+                "id": "btn_link",
+                "label": "Button Link"
+            }
+        ],
+        "blocks": [
+            {
+                "type": "image-text",
+                "name": "image with text",
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "image",
+                        "label": "Image"
+                    },
+                    {
+                        "type": "text",
+                        "id": "title",
+                        "label": "Title"
+                    },
+                    {
+                        "type": "text",
+                        "id": "subtitle",
+                        "label": "Subtitle"
+                    },
+                    {
+                        "type": "text",
+                        "id": "btn_title",
+                        "label": "Button title"
+                    },
+                    {
+                        "type": "url",
+                        "id": "btn_link",
+                        "label": "Button link"
+                    },
+                    {
+                        "type": "color",
+                        "id": "bg_color",
+                        "label": "Text color"
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "Multi image with text"
+            }
+        ]
+        
+    }
+{% endschema %}

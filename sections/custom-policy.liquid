@@ -1,0 +1,65 @@
+<div class="custom-policy-wrapper">
+    <div class="custom-policy">
+        <div class="text-wrapper">
+            <p href="{{ section.settings.policy_link }}">{{ section.settings.policy_text }}</p><span>|</span>
+            <p href="{{ section.settings.cooky_link }}">{{ section.settings.cooky }}</p><span>|</span>
+            <p href="{{ section.settings.term_link }}">{{ section.settings.term }}</p>
+        </div>
+        <div class="image-wrapper">
+            {% if section.settings.com_logo != blank%}
+                <img src="{{ section.settings.com_logo | img_url: medium }}" alt="image">
+            {% endif %}
+            <span>Built by </span><span class="bg-color">SF9</span><span class="com-title">StudioForty9</span>
+        </div>
+    </div>
+</div>
+{% schema %}
+    {
+        "name": "custom policy",
+        "settings": [
+            {
+                "type": "text",
+                "id": "policy_text",
+                "label": "Text",
+                "default": "Copyright @ StudioForty9"
+            },
+            {
+                "type": "url",
+                "id": "policy_link",
+                "label": "Policy Link"
+            },
+            {
+                "type": "text",
+                "id": "cooky",
+                "label": "Text",
+                "default": "Cookies"
+            },
+            {
+                "type": "url",
+                "id": "cooky_link",
+                "label": "Cookies Link"
+            },
+            {
+                "type": "text",
+                "id": "term",
+                "label": "Text",
+                "default": "Terms & Conditions"
+            },
+            {
+                "type": "url",
+                "id": "term_link",
+                "label": "Text"
+            },
+            {
+                "type": "image_picker",
+                "id": "com_logo",
+                "label": "Company logo"
+            }
+        ],
+        "presets": [
+            {
+                "name": "custom policy"
+            }
+        ]
+    }
+{% endschema %}

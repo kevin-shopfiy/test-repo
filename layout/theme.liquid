@@ -15,6 +15,16 @@
       <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     {%- endunless -%}
 
+    {% comment %} flickity slider{% endcomment %}
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+
+    {{ 'swiper.css' | asset_url | stylesheet_tag }}
+    <script src="{{ 'swiper.js' | asset_url }}" defer="defer"></script>
+
+
+
     <title>
       {{ page_title }}
       {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
@@ -34,6 +44,8 @@
     {%- if settings.animations_reveal_on_scroll -%}
       <script src="{{ 'animations.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+
+    <script src="{{ 'flickity.js' | asset_url }}" defer="defer"></script>
 
     {{ content_for_header }}
 
@@ -252,6 +264,7 @@
     {% endstyle %}
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
+    {{ 'custom.css' | asset_url | stylesheet_tag }}
 
     {%- unless settings.type_body_font.system? -%}
       <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
@@ -280,6 +293,41 @@
         document.documentElement.classList.add('shopify-design-mode');
       }
     </script>
+    {% comment %} custom slide arrow {% endcomment %}
+    {% comment %} <style>
+      .collection .slider-component-desktop .slider-counter {
+      display: none;
+      }
+      .collection .slider-component-desktop .slider-buttons {
+      position: absolute;
+      transform: translateY(-50%);
+      top: 35%;
+      width: 100%;
+      justify-content: space-between;
+      z-index: 9;
+      transition: 0.5s;
+      opacity: 0;
+      padding: 0 2%;
+      }
+      .collection .slider-component-desktop:hover .slider-buttons {
+      opacity: 1;
+      }
+      .collection .slider-component-desktop .slider-button {
+      background: #000000;
+      color: #ffffff;
+      opacity: 0.7;
+      }
+      .collection .slider-component-desktop .slider-button:hover {
+      opacity: 1;
+      }
+      .collection .slider-component-desktop .slider-button[disabled] .icon {
+      color: #cdcdcd;
+      }
+      .collection .slider-component-desktop .slider-button .icon {
+      height: 1rem;
+      }
+    </style> {% endcomment %}
+
   </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
@@ -297,7 +345,7 @@
       {{ content_for_layout }}
     </main>
 
-    {% sections 'footer-group' %}
+    {% comment %} {% sections 'footer-group' %} {% endcomment %}
 
     <ul hidden>
       <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>
