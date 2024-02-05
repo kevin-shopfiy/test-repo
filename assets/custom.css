@@ -775,6 +775,7 @@
 .custom-header .header__inline-menu {
     width: 80%;
     margin-top: 20px;
+    margin-left: 30px;
 }
 .custom-header .header__inline-menu .list-menu {
     width: 100%;
@@ -814,7 +815,7 @@
     color: #004289;
     font-family: IBM Plex Sans;
         font-size: 14px;
-        font-weight: 400;
+        font-weight: 600;
         line-height: 22px;
         letter-spacing: 0px;
         text-align: left;
@@ -826,7 +827,7 @@
     max-width: unset;
 }
 .custom-header .custom-search {
-    width: 85%;
+    width: 95%;
 }
 .custom-header .header__icons {
     justify-content: space-between;
@@ -891,6 +892,7 @@
     width: 100%;
     text-align: center;
     border-radius: unset;
+    text-transform: uppercase;
 }
 .custom-card h3 a {
     font-family: IBM Plex Sans;
@@ -929,4 +931,40 @@
         line-height: 25px;
         letter-spacing: 0em;
         text-align: left;
+}
+.custom-collection-title {
+        font-family: IBM Plex Sans;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 31px;
+        letter-spacing: 0em;
+        text-align: center;
+        color: #004289;
+        margin: 0;
+        margin-bottom: 20px;
+}
+/* cart svg */
+.cart-count-bubble {
+    top: 40px;
+    left: 100%;
+    width: 50px;
+}
+
+.cart-count-bubble span {
+    font-family: IBM Plex Sans;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 22px;
+        letter-spacing: 0px;
+        text-align: left;
+        color: #004289;
+}
+.icon.icon-cart {
+    width: 27px;
+}
+@media(max-width:768px) {
+    .cart-count-bubble {
+        top: unset;
+        bottom: 12px;
+    }
 }

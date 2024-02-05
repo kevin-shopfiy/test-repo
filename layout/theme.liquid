@@ -23,6 +23,11 @@
     {{ 'swiper.css' | asset_url | stylesheet_tag }}
     <script src="{{ 'swiper.js' | asset_url }}" defer="defer"></script>
 
+    <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'jquery.min.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'slick-js.min.js' | asset_url }}" defer="defer"></script>
+     {{ 'slick.css' | asset_url | stylesheet_tag }}
+     {{ 'slick-theme.css' | asset_url | stylesheet_tag }}
 
 
     <title>
@@ -294,39 +299,48 @@
       }
     </script>
     {% comment %} custom slide arrow {% endcomment %}
-    {% comment %} <style>
-      .collection .slider-component-desktop .slider-counter {
-      display: none;
-      }
-      .collection .slider-component-desktop .slider-buttons {
+
+    <style>
+      .slider-counter {
+      display: none !important;
+      }    
+      .main-content .slider-buttons {
       position: absolute;
       transform: translateY(-50%);
-      top: 35%;
+      top: 50%;
       width: 100%;
       justify-content: space-between;
       z-index: 9;
       transition: 0.5s;
       opacity: 0;
-      padding: 0 2%;
+      padding: 0 10px;
       }
-      .collection .slider-component-desktop:hover .slider-buttons {
+      .main-content:hover .slider-buttons {
       opacity: 1;
       }
-      .collection .slider-component-desktop .slider-button {
-      background: #000000;
-      color: #ffffff;
+      .main-content .slider-button--prev {
+        transform: rotate(180deg);
+      }
+      .main-content .slider-button {
+      background: #fff;
+      color: #000;
       opacity: 0.7;
+      border-radius: 50%;
+
       }
-      .collection .slider-component-desktop .slider-button:hover {
+      .main-content .slider-button:hover {
       opacity: 1;
       }
-      .collection .slider-component-desktop .slider-button[disabled] .icon {
+      .main-content .slider-button[disabled] .icon {
       color: #cdcdcd;
       }
-      .collection .slider-component-desktop .slider-button .icon {
+      .main-content .slider-button .icon {
       height: 1rem;
       }
-    </style> {% endcomment %}
+      .flickity-prev-next-button {
+        display: none;
+      }
+    </style> 
 
   </head>
 

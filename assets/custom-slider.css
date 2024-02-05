@@ -1,0 +1,16 @@
+.carousel-cell {
+    width: 25%;
+    margin-right: 10px;
+    border-radius: 5px;
+    counter-increment: carousel-cell;
+}
+.flickity-button {
+    background-color: #fff !important;
+}
+
+@media(max-width:768px) {
+    .carousel-cell {
+        width: 50%;
+    }
+}
+
